@@ -10,8 +10,8 @@ import re, glob, os
 
 # text that uniquely surrounds usernames as of 12/8/2-16. You can edit
 # this for a more general-purpose scrubber.
-start = '<span class="visuallyhidden">Unmute @'
-end = "</span></span>"
+start = '<a class="ProfileCard-bg js-nav" href="/'
+end = '" tabindex="-1" aria-hidden="true" style="'
 
 # create an output file to put our usernames in
 outputFileName = "usernameoutput.csv"
@@ -36,4 +36,3 @@ for file in glob.glob("*.html"):
 print "___________________________________________"
 print "All usernames above (and the files they're from) are saved to the output file:"
 print outputFileName
-
