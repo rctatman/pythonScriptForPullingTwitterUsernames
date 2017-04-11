@@ -26,10 +26,11 @@ for file in glob.glob("*.html"):
 	with open(file, 'r') as f:
 		line = f.readline()
 		while line:
-			if start in line:
+			if start in line and end in line:
 				newline = line[line.find(start)+len(start):line.rfind(end)]	
-				print newline
-				output.write(newline + "," + file + "\n")
+				if len(newline) < 15 and len(newline) > 0:
+					print newline
+					output.write(newline + "," + file + "\n")
 			line = f.readline()
 
 # print a message to let you know the script is done
